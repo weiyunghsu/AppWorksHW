@@ -1,1 +1,62 @@
+AppWorks School
+Batch #14 / Android Class
+Remote Learning Assignment - Week 1
+
+1.
+a. val id = 9527
+	A: Yes, Val id can be an Int
+b. var number : Int = 5.6
+	A: No, number 5.6 can't be an Int
+c. var title = "Hello Kotlin!"
+	A: Yes, title can be a String 
+d. val content : String = null
+	A: No, Null can not be a value of a non-null type String
+e. val number : Double? = 556.6
+	A: Yes, number 556.6 can be a Double
+f. var list: List<String>? = listOf(null, null)
+	A: No, Type mismatch: inferred type is String? but String was expected
+g. var list: List<String?>? = listOf("Wayne", "Chen")
+	A: Yes, "Wayne", "Chen" can be a String List
+h. list.size
+	A: No, Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type List<String?>?
+i. list?.size
+	A: Yes, use ?. can count the items numbers in List
+
+2.What will the code print?
+var message = "Hello and welcome to AppWorks School :)"
+when (message.length) {
+	0 -> println("Aye!")
+	in 1..39 -> println("Your grace.")
+	in 40..56 -> println("My lord.")
+	else -> println("You know nothing...")
+}
+	A: c. "Your grace.", because the message.length is 39, so that when it in 1 to 39, it will print "Your grace."
+
+3.Which answer is the correct way to initialize the array to output.
+	A: d. val array = Array(6) { 1000.0.pow(it) },
+		every item is 1000.0x it., and with 6 levels.
+
+4.
+fun main(arg: Array<Int>) {
+    class Human(){
+        var id = 0
+        var name: String = ""
+        var attack() = ("<the name passed in> use Fist Attack!")
+        println(attack)
+    }
+}
+
+5.
+open class Human(name: String){
+    val name:String = name
+}
+
+class Mage(name: String) : Human(name)
+class Attack(name: String)
+
+fun main(args: Array<String>) {
+    val mage = Mage("")
+    var attack = Attack("<the name passed in> use Fist Attack!")
+    println(attack())
+}
 
