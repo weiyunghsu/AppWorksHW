@@ -1,1 +1,63 @@
+AppWorks School
+Batch #14 / Android Class
+Remote Learning Assignment - Week 2
 
+1. What is Inheritance? Try to explain in Mandarin.
+
+A：繼承(Inheritance)，在專案中有些物件的屬性和特徵，子類別會和母類別相同，此時就可以透過繼承的方法，
+在母類別基礎上建立子類別，使之有母類別的特徵，可減少程式碼重複宣告的繁複。
+在Kotlin中預設是final，若要繼承則前面要加上open，才能提供給子類別繼承。
+子類別後方用:可以呼叫母類別之建構式以繼承。若子類別需要覆寫母類別的屬性，則要使用override以覆寫。
+
+2. How to split a string in Android? Explain your understanding, and even better to attach some sample code.
+
+    val str1 = "This is a very good school homework"
+    val list1 = str1.split(' ')
+    for (str in list1){
+        print("$str \t")
+    }
+    println()
+    val list2 = str1.split(" ")
+    for (str in list2){
+        print("$str \t")
+    }
+A：例如要分割上述str1這句話，可採用str1.split(" ")或者str1.split(' ')函數將字符串分割。
+
+3. What kind of key-value pair collection do we use in Android? Attach a sample code that uses for-loop to print each key-value pair.
+
+    val mapOfStudent = mapOf("Paul" to 97, "Lily" to 63, "May" to 75)
+    val score = mapOfStudent["Paul"]
+    for (student in mapOfStudent) {
+        println("${student.key} (${student.value})")
+
+A：在Android中會用Map來儲存Key-value對照，取出Map的元素是用Key而非Index，Key具有唯一性，但Value則允許重複；Key須相同Type、Value也須同Type，但Key和Value可屬於不同Type。
+	將Key學生與Value分數放入Map中，mapof中為學生與分數之對應，在使用迴圈for (student in mapOfStudent)來列印出各學生的各分數。列印結果為：
+	Paul (97)
+	Lily (63)
+	May (75)
+
+
+4. What’s the difference between ArrayList and LinkedList? Try to explain in Mandarin.
+
+A：ArrayList之底層是Object陣列，所以ArrayList集合查詢效率高，增刪效率低。 
+	檢索效率高是因為第一：Java的陣列中儲存的每個物件型別一致，也就是說每個物件佔用的空間大小相同；
+	第二：Java的陣列中儲存的每個物件的記憶體位置為連續狀態；第三：首項的記憶體位置作為整個陣列物件的記憶體位置，可見我們是知道首項記憶體位置的；
+	第四：陣列中的物件是有下標的，有下標就可以計算出被查詢的物件和首項的位移量。 
+	增刪效率低是因為往數組裡某個下標位置增加物件需要把這個下標往後的物件後移一位，刪除亦同。
+
+	LinkedList之底層採用雙向連結串列結構，優勢在於高效地插入和刪除其中的物件，但隨機訪問物件的速度較慢，
+	特性與ArrayList剛好相反。如果程式需要反覆對集合做插入和刪除操作，應選擇LinkedList；若主要是要查詢則採ArrayList。
+
+5. What are Value Type variables? List out the Value Type variables you know.
+
+A：(1).Number(Double, Float, Long, Int, Short, Byte)
+   (2).Char('字元')
+   (3).Boolean(true or false)
+   (4).Array
+   (5).String
+   (6).Unit
+   (7).Any(相當於Java的Object)
+
+6. What’s the maximum value of Int? If you want to represent integers larger than the limit, what should you do instead of using int variables?
+
+A：Int的最大值為2^32(2147483647)，當超出最大值時編譯器則會提示資料值已超過不符合該資料型態能處理的範圍錯誤。當超出該最大值時，資料類型會變成Long，此時應在數值後面加上L以顯示為Long型態，以免產生錯誤。
