@@ -2,6 +2,8 @@ AppWorks School
 Batch #14 / Android Class
 Remote Learning Assignment - Week 1
 
+test.abc.def
+
 1.
 a. val id = 9527
 	A: Yes, Val id can be an Int
