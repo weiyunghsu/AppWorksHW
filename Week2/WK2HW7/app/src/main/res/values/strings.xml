@@ -39,10 +39,11 @@
     <string name="your_name">Wei-Yung Hsu</string>
     <string name="your_nickname">Wei-Yung</string>
     <string name="about_me">About Me</string>
-    <string name="autobiography">Autobiography\n\n
+    <string name="autobiography">An Example Article\n\n
     The summer was over and it was time to go back to school.
-\n\n“There\'s so much to organise,” groaned Mum. “I can\'t believe the holidays are over!”
+\n“There\'s so much to organise,” groaned Mum. “I can\'t believe the holidays are over!”
 \n“I don\'t know why you\'re complaining,” said Joe, who was ten. “You don\'t even go to school!”
-\n\n“”</string>
+\n”</string>
     <string name="profile">profile</string>
+    <string name="title_about_profile">title_about_profile</string>
 </resources>
