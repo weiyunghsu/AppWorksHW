@@ -2,7 +2,7 @@ AppWorks School
 Batch #14 / Android Class
 Remote Learning Assignment - Week 1
 
-test.abc
+test.abc.def
 
 1.
 a. val id = 9527
