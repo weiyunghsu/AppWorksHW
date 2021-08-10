@@ -59,18 +59,17 @@
             android:id="@+id/profile_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:paddingStart="@dimen/button_padding"
             android:paddingEnd="@dimen/button_padding"
-            android:layout_marginTop="20dp"
-            android:text="Profile"
+            android:text="@string/profile"
             android:textColor="@color/youWinDark"
             android:textSize="@dimen/button_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nextMatchButton"
-            tools:layout_editor_absoluteX="161dp" />
+            app:layout_constraintTop_toBottomOf="@+id/nextMatchButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

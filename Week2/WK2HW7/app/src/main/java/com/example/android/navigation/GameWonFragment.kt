@@ -34,8 +34,6 @@ import com.example.android.navigation.databinding.FragmentGameWonBinding
 import android.content.pm.ResolveInfo
 import android.content.pm.PackageManager
 
-
-
 class GameWonFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -46,6 +44,14 @@ class GameWonFragment : Fragment() {
             view.findNavController().navigate(
                     GameWonFragmentDirections.actionGameWonFragmentToGameFragment())
         }
+        binding.profileButton.setOnClickListener { view: View ->
+            view.findNavController().navigate(
+                GameWonFragmentDirections.actionGameWonFragmentToProfileFragment())
+        }
+        //profile_button.setOnClickListener { view: View ->
+        //    view.findNavController().navigate(
+        //        GameWonFragmentDirections.actionGameWonFragmentToProfileFragment())
+        //}
         setHasOptionsMenu(true)
         return binding.root
     }
