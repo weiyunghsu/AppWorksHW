@@ -1,1 +1,87 @@
+AppWorks School
+Batch #14 / Android Class
+Remote Learning Assignment - Week 3
 
+1. What is Encapsulation? Try to list out the benefits of Encapsulation.
+
+A：封裝(Encapsulation)的特性是類別可控制成員的存取範圍。用戶端使用時不需知道被引用類別的內部實作，
+僅需知道公開成員被引用時的輸入與輸出為何，未公開成員之細節不需知道。
+這樣可以降低開發人員被過多細節干擾，提高開發效率。修改類別成員和方法時只需對外規格不變動，
+就不會影響用戶端操作，達到程式間隔離之效果，提高程式健壯性。
+存取類別成員時可做內部安全檢查、過濾與篩選，增加資料安全性。
+綜上所述，封裝之好處為(1)隱藏細節，降低複雜度；(2)界面隔離，提高健壯性；(3)內部檢查，增加安全性。
+
+2. Try to explain what enum is and why we use them.
+    
+A：列舉(Enumeration)，對於一些固定物件的類別，可採列舉方式設計，定義各物件並直接使用之。
+列舉類別提供內建之屬性與方法，能取得列舉物件之名稱，或藉由名稱字串來取得相應之物件。
+
+3. How to use enum in Kotlin? Attach a sample code that uses enum in Kotlin.
+
+A：建立列舉可透過建構式宣告屬性，此處包含各國之名稱與面積，
+再建立出Country物件，列印出各國狀態相關資訊，並計算出各國密度。
+
+enum class CountryType(val countryName: String,
+                        val area: Int) {
+    USA("美國", 9,834,000),
+    CAN("加拿大", 9,985,000),
+    AUS("澳大利亞", 7,692,000),
+    NZ("紐西蘭", 268,021),
+   TWN("臺灣", 36,193)
+}
+class Country (val id: String,
+                     val countryType: CountryType,
+                     var population: Double) {
+}
+
+val country1 = Country("1", CountryType.USA, 32820)
+val country2 = Country("2", CountryType.CAN, 3759)
+val country3 = Country("3", CountryType.AUS, 2536)
+val country4 = Country("4, CountryType.NZ, 491.7)
+val country5 = Country("5", CountryType.TWN, 2357)
+
+val population = listOf(popu1, popu2, popu3, popu4, popu5)
+for (country in population) {
+    var info = ""
+
+    info += "國家：${country.countryType.countryName}\n"
+    info += "人口：${country.population}\n"
+    info += "換算密度：${country.population / country.CountryType.area}\n"
+
+    println(info)
+}
+
+
+4. What are the differences between LinearLayout and RelativeLayout? Try to explain in detail.
+
+A：Linear Layout(線性佈局)和Relative Layout(相對佈局)，
+
+LinearLayout–線性布局，其線性可分為水平（horizontal）及垂直（vertical），預設是水平布局，
+若想要修改為垂直則可以在Layout的xml檔內透過『android:orientation=" "』來進行設定，
+但不管是一行（列）只能存在一個元件。
+當我們要設定為垂直線性（由上而下）時就在LinearLayout的屬性質裡面設定
+『android:orientation="vertical"』。
+當我們要設定為水平線性（由左而右）時就在LinearLayout的屬性質裡面設定
+『android:orientation="horizontal"』。
+
+RelativeLayout–相對布局，顧名思義就是可以透過相對位置來設定布局內各個元件的位置，
+其元件設定的位置可以是相對於整個RelativeLayout布局或者是相對於其他元件的位置。
+由於Android的預設各元件會自動靠左及上邊，所以在使用『android:layout_marginBottom』或
+『android:layout_marginRight』則須搭配『android:layout_alignParentBottom』或
+『android:layout_alignParentRight』才會有效果。
+
+5. Try to explain the benefits of ConstraintLayout. Why should you use it?
+
+A：ConstraintLayout和傳統用XML編寫界面的方式恰恰相反，
+ConstraintLayout非常適合使用可視化的方式來編寫界面，但並不太適合使用XML的方式來進行編寫。
+當然，可視化操作的背後仍然還是使用的XML代碼來實現的，只不過這些代碼是由Android Studio
+根據我們的操作自動生成的。
+
+另外，ConstraintLayout還有一個優點，它可以有效地解決佈局嵌套過多的問題。
+平時編寫界面時，複雜的佈局總會伴隨著多層的嵌套，而嵌套越多，
+程序的性能也就越差。ConstraintLayout則是使用約束的方式來指定各個控件的位置和關係的，
+它有點類似於RelativeLayout，但遠比RelativeLayout要更強大。
+
+6. complete the UI which is based on the andfun-kotlin-sleep-tracker project (Step.07-Solution-Add-Button-States-and-SnackBar branch)
+
+A：See the upload project files.
