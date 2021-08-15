@@ -49,8 +49,10 @@
     <string name="three_ok">OK</string>
     <string name="four_pretty_good">Pretty good</string>
     <string name="five_excellent">Excellent!</string>
+    <string name="enter_sleep_info">Please enter any info for this night.</string>
 
     <!-- Toast to play after Clear button has been pressed -->
     <string name="cleared_message">All your data is gone forever.</string>
+    <string name="please_enter_any_info_for_this_night">Please enter any info for this night.</string>
 
 </resources>
