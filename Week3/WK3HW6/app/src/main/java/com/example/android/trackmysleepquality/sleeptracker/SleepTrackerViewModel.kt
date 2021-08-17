@@ -185,7 +185,7 @@ class SleepTrackerViewModel(
             _navigateToSleepQuality.value = oldNight
         }
     }
-
+//    onSetSleepInformation()
     /**
      * Executes when the CLEAR button is clicked.
      */

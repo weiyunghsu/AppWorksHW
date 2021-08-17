@@ -126,22 +126,17 @@
             app:layout_constraintTop_toTopOf="@+id/quality_four_image"
             app:srcCompat="@drawable/ic_sleep_5" />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/enter_sleep_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
+            android:hint="@string/please_enter_any_info_for_this_night"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quality_four_image">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/enter_sleep_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/please_enter_any_info_for_this_night" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+            app:layout_constraintTop_toBottomOf="@+id/quality_four_image"/>
+<!--            android:text="@={SleepQualityViewModel.sleepInformation}"-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>

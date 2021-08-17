@@ -35,4 +35,5 @@ class SleepQualityViewModelFactory(
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
+
 }
