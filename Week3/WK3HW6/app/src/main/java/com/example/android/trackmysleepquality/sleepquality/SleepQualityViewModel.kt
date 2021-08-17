@@ -73,6 +73,7 @@ class SleepQualityViewModel(
         viewModelScope.launch {
                 val tonight = database.get(sleepNightKey) ?: return@launch
                 tonight.sleepQuality = quality
+            //  practice point here!
                 tonight.sleepInformation = sleepInfo.value?:""
                 database.update(tonight)
 
@@ -94,5 +95,6 @@ class SleepQualityViewModel(
 //        }
 //        enterSleepInformation()
 //    }
+    //wrong code here~~
 }
 

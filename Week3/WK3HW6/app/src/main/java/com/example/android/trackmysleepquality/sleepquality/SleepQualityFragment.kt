@@ -77,6 +77,7 @@ class SleepQualityFragment : Fragment() {
                 sleepQualityViewModel.doneNavigating()
             }
         })
+        //here is the two way binding practice point, can review here next time.
         sleepQualityViewModel.sleepInfo.observe(viewLifecycleOwner, Observer {
            Log.i("try to see sleepInfo", "$it")
         })
