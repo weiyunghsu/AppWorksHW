@@ -92,7 +92,7 @@ class SleepQualityViewModel(
             // Setting this state variable to true will alert the observer and trigger navigation.
             _navigateToSleepTracker.value = true
         }
-//        enterSleepInformation()
+        enterSleepInformation()
     }
 }
 
