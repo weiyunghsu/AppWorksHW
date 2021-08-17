@@ -73,7 +73,7 @@ class SleepQualityViewModel(
         viewModelScope.launch {
                 val tonight = database.get(sleepNightKey) ?: return@launch
                 tonight.sleepQuality = quality
-                //tonight.sleepInformation = information
+                tonight.sleepInformation = sleepInfo.value?:""
                 database.update(tonight)
 
             // Setting this state variable to true will alert the observer and trigger navigation.
@@ -82,17 +82,17 @@ class SleepQualityViewModel(
     }
 
     var sleepInfo = MutableLiveData<String>()
-    fun enterSleepInformation(information: String) {
-        viewModelScope.launch {
-            val tonightInfo = database.get(sleepNightKey) ?: return@launch
-            sleepInfo.value = "a"
-            tonightInfo.sleepInformation = information
-            database.update(tonightInfo)
-
-            // Setting this state variable to true will alert the observer and trigger navigation.
-            _navigateToSleepTracker.value = true
-        }
-        enterSleepInformation()
-    }
+//    fun enterSleepInformation(information: String) {
+//        viewModelScope.launch {
+//            val tonightInfo = database.get(sleepNightKey) ?: return@launch
+//            sleepInfo.value = "a"
+//            tonightInfo.sleepInformation = information
+//            database.update(tonightInfo)
+//
+//            // Setting this state variable to true will alert the observer and trigger navigation.
+//            _navigateToSleepTracker.value = true
+//        }
+//        enterSleepInformation()
+//    }
 }
 

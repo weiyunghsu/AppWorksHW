@@ -97,10 +97,6 @@ class SleepTrackerFragment : Fragment() {
             }
         })
 
-        SleepTrackerViewModel.sleepInfo.observe(this, Observer {night ->
-            night?.
-            binding.enter_sleep_info.text = ""
-        })
         return binding.root
     }
 }

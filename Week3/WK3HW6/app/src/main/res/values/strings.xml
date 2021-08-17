@@ -40,6 +40,7 @@
     <string name="end_time"><![CDATA[<b>End:</b>]]></string>
     <string name="quality"><![CDATA[<b>Quality:</b>]]></string>
     <string name="hours_slept"><![CDATA[<b>Hours:Minutes:Seconds</b>]]></string>
+    <string name="slept_Info"><![CDATA[<b>Sleep Information:</b>]]></string>
 
     <!-- Sleep quality strings -->
     <string name="how_was_hour_sleep">How was your sleep?</string>
@@ -54,5 +55,6 @@
     <!-- Toast to play after Clear button has been pressed -->
     <string name="cleared_message">All your data is gone forever.</string>
     <string name="please_enter_any_info_for_this_night">Please enter any info for this night.</string>
+
 
 </resources>
