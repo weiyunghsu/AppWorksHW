@@ -1,1 +1,49 @@
+AppWorks School
+Batch #14 / Android Class
+Remote Learning Assignment - Week 4
 
+1. What is Polymorphism? Try to explain in Mandarin.
+
+A: Polymorphism，中文翻譯為多型，指的是一個訊息是由接收者來解釋，而非由訊息發出者來解釋；
+故若執行時若接收者換成不同物件時，系統行為會改變，此特性稱為多型。
+例如說去早餐店買早餐，店員問說：「帥哥，今天要吃什麼？」店員期待是一個order之回應，
+此時卻有兩個顧客同時order，故一個訊息被接收者來決定與解釋之系統有此特性即稱之為多型。
+
+2. Here are the 7 important lifecycle methods of an Activity:
+i. onCreate() ; ii. onStart() ; iii. onResume() ; iv. onPause() ; v. onStop() ; vi. onDestroy() ; vii. onRestart()
+Try to explain when they are called during the lifecycle of Activity.
+                    
+A:                      onRestart()←───────────────────────使用者導航回到此活動──────┐                   
+                            ∣          ┌───────使用者切換回本程式──────┐                           ∣
+                            ↓          ↓                                            ∣                           ∣
+〈活動開始〉→onCreate()→onStart()→onResume()→〈活動執行中〉→其他活動跑來前台→onPause()→本活動再也不可見→onStop()→活動結束或被系統殺了→onDestroy()→《程式關閉》
+                 ↑                                                                   ∣                           ∣
+                 └───使用者導航回本活動────《程式執行程序被殺了》←───有更高權重之程式需要記憶體────┘
+
+系統第一次創建時會用onCreate()，在整個生命週期只會發生一次，開始後就會進入「已創建」狀態，要把基本的程式啟動邏輯放在這邊，
+例如介面、變量的定義或配置等在首次運行時創建。創建完程式會進入onStart()的「已開始」狀態，程式出現在最上層讓使用者看到，
+此時和活動生命週期有關的感知組件都會收到ON_START的事件。當此階段結束，活動會進入「已恢復」狀態改用onResume()，
+活動會維持此狀態運行，直到被用戶主動或被動發生其他事件而中斷，例如接電話或者查資料或螢幕被關閉等。
+當事件被中斷後，將進入「已暫停」狀態，此時要用onPause()，此時有些組件因暫停而中斷，當暫停結束後切回本活動，
+將回到onResume()以再次初始化活動所需的組件。當活動結束時不再對使用者可見時，進入「已停止」狀態，會啟用onStop()，
+可以釋放記憶體或資源，以讓其他程式可以運用。或者將收到的數據於此時一起寫入資料庫當中。
+當使用者重新切回來本活動時，系統會回復到onRestart()的「重新開始」狀態，再回到onStart()繼續運行此活動。
+此時當有更高權重的App需要用到記憶體時，後台可能換選擇殺掉本程式以釋放記憶體，以免卡頓；
+此時當使用者重新切回來本活動時，系統會回復到onCreate()的創建狀態。
+最後當活動完成結束或被系統殺掉或者因為旋轉版面等原因時，程式即將結束或被暫時銷毀，會進入onDestroy()的「破壞」狀態。
+例如旋轉後重新變更介面進行新的初始化，或者最後程式結束程式關閉。
+
+3. What is the Android Jetpack?
+
+A: Android Jetpack是Google開發的一套完整的套件資料庫、工具和指南，可幫助開發者更輕鬆編寫優質應用。
+這些組件可協助遵循最佳做法、擺脫編寫樣板代碼的工作並簡化複雜任務，以便將精力集中放在所需的代碼上。
+Google利用Jetpack將一些優秀的Android組件庫進行了標準化。Android Jetpack 完美兼容 Kotlin 語言，利用 Android KTX 可大幅節省代碼量。
+Jetpack包含與平臺API解除綁定的androidx.*軟體資料庫。意即它可提供向後兼容性，且比Android平臺的更新頻率更高，
+以此確保始終可以獲得最新且最好的Jetpack組件版本。其優點是可以加速開發、消除樣板代碼、及建構高品質的強大應用。
+Android Jetpack分成了四大部分：(1)Foundation基礎、(2)Architecture架構、(3)Behavior行為、(4)UI介面。
+
+4. What is Coroutines? Why do we use it? Try to explain in Mandarin.
+
+A: Coroutines，其實是兩個字合併而成，分別是合作cooperation加上例行作業routine。就是合作式例行作業，也有人翻譯作協程。
+亦即當function或method，和其他更多的function或method一起協同作業時，稱之。此方法可以增加運行之效率。
+其特色為允許method被暫停執行後狀態保留，就可以讓出其他空間去執行其他功能，等回復該method時再從暫停的狀態中繼續運行。
