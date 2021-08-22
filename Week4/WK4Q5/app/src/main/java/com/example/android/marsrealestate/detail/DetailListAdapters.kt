@@ -11,11 +11,11 @@ import kotlinx.android.synthetic.main.fragment_detail.view.*
 class DetailListAdapters : RecyclerView.Adapter<DetailListAdapters.DetailViewHolder>() {
     var detailList = listOf<ClipData.Item>()
     class DetailViewHolder (itemView: View):RecyclerView.ViewHolder(itemView){
-//        val selectedProperty = itemView.main_photo_image
+        val selectedProperty = itemView.main_photo_image
         val displayPropertyPrice = itemView.price_value_text
         val displayPropertyType = itemView.property_type_text
         fun bind(item: ClipData.Item){
-//            selectedProperty.setImageResource(itemView.main_photo_image)
+            selectedProperty.setImageResource(itemView.main_photo_image)
             displayPropertyPrice.text= itemView.price_value_text.toString()
             displayPropertyType.text= itemView.property_type_text.toString()
         }
@@ -29,6 +29,6 @@ class DetailListAdapters : RecyclerView.Adapter<DetailListAdapters.DetailViewHol
         override fun onBindViewHolder(holder: DetailViewHolder, position: Int) {
             holder.bind(detailList[position])
         }
-//        fun updateList(list:ArrayList<Movement>){
-//            DetailList = list
+       fun updateList(list:ArrayList<Movement>){
+            detailList = list
 }

@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        detailListAdapters.updateList(DetailListAdapters.DetailList)
-        r_view.layoutManager = LinearLayoutManager(this)
-        r_view.adapter = detailListAdapters
+        detailListAdapters.updateList(DetailListAdapters.detailList)
+        r_view?.layoutManager = LinearLayoutManager(this)
+        r_view?.adapter = detailListAdapters
     }
 }
