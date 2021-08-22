@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.marsrealestate.databinding.GridViewItemBinding
+import com.example.android.marsrealestate.databinding.LinearViewItemBinding
 import com.example.android.marsrealestate.network.MarsProperty
 
 class PhotoLinearAdapter(val onClickListener: OnClickListener ) :
@@ -31,7 +31,7 @@ class PhotoLinearAdapter(val onClickListener: OnClickListener ) :
     }
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): PhotoLinearAdapter.MarsPropertyViewHolder {
         return PhotoLinearAdapter.MarsPropertyViewHolder(
-            GridViewItemBinding.inflate(
+            LinearViewItemBinding.inflate(
                 LayoutInflater.from(
                     parent.context
                 )
@@ -51,4 +51,3 @@ class PhotoLinearAdapter(val onClickListener: OnClickListener ) :
         fun onClick(marsProperty:MarsProperty) = clickListener(marsProperty)
     }
     }
-}
