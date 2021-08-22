@@ -55,7 +55,11 @@ class OverviewFragment : Fragment() {
 
         // Sets the adapter of the photosGrid RecyclerView with clickHandler lambda that
         // tells the viewModel when our property is clicked
-        binding.photosGrid.adapter = PhotoGridAdapter(PhotoGridAdapter.OnClickListener {
+//        binding.photosGrid.adapter = PhotoGridAdapter(PhotoGridAdapter.OnClickListener {
+//            viewModel.displayPropertyDetails(it)
+//        })
+
+        binding.photosLinear.adapter = PhotoLinearAdapter(PhotoLinearAdapter.OnClickListener {
             viewModel.displayPropertyDetails(it)
         })
 
