@@ -19,12 +19,9 @@ package com.example.android.marsrealestate
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.android.marsrealestate.detail.DetailListAdapters
-import kotlinx.android.synthetic.main.fragment_detail.*
 
 class MainActivity : AppCompatActivity() {
-    val detailListAdapters = DetailListAdapters ()
+
     /**
      * Our MainActivity is only responsible for setting the content view that contains the
      * Navigation Host.
@@ -32,8 +29,5 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        detailListAdapters.updateList(DetailListAdapters.list)
-        r_view?.layoutManager = LinearLayoutManager(this)
-        r_view?.adapter = detailListAdapters
     }
 }
