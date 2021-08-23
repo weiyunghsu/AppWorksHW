@@ -23,8 +23,8 @@ import androidx.lifecycle.ViewModel
 import com.example.android.marsrealestate.network.MarsApi
 import com.example.android.marsrealestate.network.MarsApiFilter
 import com.example.android.marsrealestate.network.MarsProperty
-//import kotlinx.coroutines.CoroutineScope
-//import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
