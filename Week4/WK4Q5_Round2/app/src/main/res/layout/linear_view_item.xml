@@ -25,7 +25,7 @@
             name="property"
             type="com.example.android.marsrealestate.network.MarsProperty" />
         <variable
-            name="viewModel"
+            name="viewModel2"
             type="com.example.android.marsrealestate.detail.DetailViewModel" />
     </data>
     <ScrollView
@@ -54,7 +54,7 @@
                 android:id="@+id/property_type_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.displayPropertyType}"
+                android:text="@{viewModel2.displayPropertyType}"
                 android:textColor="#de000000"
                 android:textSize="39sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@{viewModel.displayPropertyPrice}"
+                android:text="@{viewModel2.displayPropertyPrice}"
                 android:textColor="#de000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"

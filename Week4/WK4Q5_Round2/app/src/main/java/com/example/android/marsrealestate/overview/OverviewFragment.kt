@@ -51,7 +51,7 @@ class OverviewFragment : Fragment() {
         binding.lifecycleOwner = this
 
         // Giving the binding access to the OverviewViewModel
-        binding.viewModel = viewModel
+        binding.viewModel1 = viewModel
 
         // Sets the adapter of the photosGrid RecyclerView with clickHandler lambda that
         // tells the viewModel when our property is clicked

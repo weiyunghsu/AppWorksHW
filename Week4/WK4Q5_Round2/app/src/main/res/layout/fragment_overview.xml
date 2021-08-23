@@ -23,8 +23,11 @@
 
     <data>
         <variable
-            name="viewModel"
+            name="viewModel1"
             type="com.example.android.marsrealestate.overview.OverviewViewModel" />
+        <variable
+            name="viewModel2"
+            type="com.example.android.marsrealestate.detail.DetailViewModel" />
         <variable
             name="property"
             type="com.example.android.marsrealestate.network.MarsProperty" />
@@ -46,7 +49,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:listData="@{viewModel.properties}"
+            app:listData="@{viewModel1.properties}"
             app:spanCount="1"
             tools:itemCount="16"
             tools:listitem="@layout/linear_view_item" />
@@ -59,14 +62,14 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:marsApiStatus="@{viewModel.status}" />
+            app:marsApiStatus="@{viewModel1.status}" />
 
         <TextView
             android:id="@+id/property_type_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@{DetailViewModel.displayPropertyType}"
+            android:text="@{viewModel2.displayPropertyType}"
             android:textColor="#de000000"
             android:textSize="39sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@{DetailViewModel.displayPropertyPrice}"
+            android:text="@{viewModel2.displayPropertyPrice}"
             android:textColor="#de000000"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
