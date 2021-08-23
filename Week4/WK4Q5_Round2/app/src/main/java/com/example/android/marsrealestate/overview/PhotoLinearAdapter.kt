@@ -36,20 +36,21 @@ class PhotoLinearAdapter(val onClickListener: OnClickListener ) :
     override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): MarsPropertyViewHolder {
         return MarsPropertyViewHolder(
             LinearViewItemBinding.inflate(
-                LayoutInflater.from(parent.context)
-                val itemView = inflater . inflate (R.layout.linear_view_item, parent, false)
-                MarsPropertyViewHolder(itemView, viewType)
-
-                 inner class MarsPropertyViewHolder(itemView: View, var viewType: Int) :
-                RecyclerView.ViewHolder(itemView) {
-                var imageView: ImageView? = null
-                var textView1: TextView? = null
-                var textView2: TextView? = null
-                fun bind(item: item) {
-                    imageView = itemView.findViewById(R.id.mars_image)
-                    textView1 = itemView.findViewById(R.id.price_value_text)
-                    textView2 = itemView.findViewById(R.id.property_type_text)
-                    )}
+                LayoutInflater.from(parent.context))
+        val itemView = inflater.inflate(R.layout.linear_view_item, parent, false)
+        MarsPropertyViewHolder(itemView, viewType))
+        inner class MarsPropertyViewHolder(itemView: View, var viewType: Int) :
+        RecyclerView.ViewHolder(itemView) {
+            var imageView: ImageView? = null
+            var textView1: TextView? = null
+            var textView2: TextView? = null
+            fun bind(item: item) {
+                imageView = itemView.findViewById(R.id.mars_image)
+                textView1 = itemView.findViewById(R.id.price_value_text)
+                textView2 = itemView.findViewById(R.id.property_type_text)
+            imageView?.setImageResource(item.image)
+            textView1?.setText(item.text)
+            textView2?.setText(item.text)}
         }
     }
     override fun onBindViewHolder(holder: MarsPropertyViewHolder, position: Int) {
