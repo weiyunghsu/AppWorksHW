@@ -1,10 +1,14 @@
 package com.example.android.marsrealestate.overview
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.marsrealestate.R
 import com.example.android.marsrealestate.databinding.LinearViewItemBinding
 import com.example.android.marsrealestate.network.MarsProperty
 
@@ -29,16 +33,26 @@ class PhotoLinearAdapter(val onClickListener: OnClickListener ) :
             return oldItem.id == newItem.id
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): PhotoLinearAdapter.MarsPropertyViewHolder {
-        return PhotoLinearAdapter.MarsPropertyViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup,viewType: Int): MarsPropertyViewHolder {
+        return MarsPropertyViewHolder(
             LinearViewItemBinding.inflate(
-                LayoutInflater.from(
-                    parent.context
-                )
-            )
-        )
+                LayoutInflater.from(parent.context)
+                val itemView = inflater . inflate (R.layout.linear_view_item, parent, false)
+                MarsPropertyViewHolder(itemView, viewType)
+
+                 inner class MarsPropertyViewHolder(itemView: View, var viewType: Int) :
+                RecyclerView.ViewHolder(itemView) {
+                var imageView: ImageView? = null
+                var textView1: TextView? = null
+                var textView2: TextView? = null
+                fun bind(item: item) {
+                    imageView = itemView.findViewById(R.id.mars_image)
+                    textView1 = itemView.findViewById(R.id.price_value_text)
+                    textView2 = itemView.findViewById(R.id.property_type_text)
+                    )}
+        }
     }
-    override fun onBindViewHolder(holder: PhotoLinearAdapter.MarsPropertyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MarsPropertyViewHolder, position: Int) {
         val marsProperty = getItem(position)
         holder.itemView.setOnClickListener {
             onClickListener.onClick(marsProperty)
