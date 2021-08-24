@@ -22,6 +22,8 @@ import androidx.lifecycle.LiveData
 import com.example.android.marsrealestate.overview.MarsApiStatus
 import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
+import kotlin.math.round
+import kotlin.math.roundToInt
 
 /**
  * Gets Mars real estate property information from the Mars API Retrofit service and updates the
@@ -40,11 +42,17 @@ data class MarsProperty(
         get() = type == "rent"
     val sale
         get() =
-            if (type == "rent"){
+            if (type == "rent") {
                 "For Rent"
-            }
-            else{
+            } else {
                 "For Sale"
             }
-
+    val pay
+        get() =
+            if (type == "rent") {
+                "\$ ${price.roundToInt()} /month"
+            } else {
+                "\$ ${price.roundToInt()}"
+            }
 }
+
